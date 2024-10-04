@@ -8,34 +8,68 @@
 	</head>
 	<body class="bg-black flex items-center flex-col">
 		<script src="../scripts/gsap.ts"></script>
+		<script src="../scripts/three.ts"></script>
 
-		<div id="title" class="flex flex-col gap-1 items-center justify-center w-screen border-b-2 border-neutral-800 pb-5 pt-2">
-			<h3 class="text-white text-2xl font-departure" id="mini-title">hi i'm</h3>
-			<h1 class="text-4xl lg:text-7xl text-white font-extralight font-departure">mascararivers</h1>
+		<canvas id="canvas" class="fixed"></canvas>
+
+		<div class="absolute">
+			<div id="title" class="flex flex-col gap-1 items-center justify-center w-screen border-b-2 border-neutral-800 pb-5 pt-2">
+				<h3 class="text-white text-2xl font-departure" id="mini-title">hi i'm</h3>
+				<h1 class="text-4xl lg:text-7xl text-white font-extralight font-departure">mascararivers</h1>
+			</div>
+	
+			<div class="w-screen p-10 flex flex-col gap-5 lg:gap-0 lg:flex-row justify-around items-center pb-20">
+	
+				<div class="flex flex-col items-center justify-center">
+					<img src="/images/pfp.png" class="w-32 h-32 lg:w-72 lg:h-72 rounded-full shadow-xl shadow-neutral-900" alt="" id="pfp">
+					<p class="text-white font-departure text-center p-2" id="quote">"life's greatest combination is jaeger <br> bombs and car keys"</p>
+				</div>
+	
+				<div class="flex flex-col items-right text-center lg:text-right">
+					<h1 class="text-white text-6xl font-departure pb-5" id="abtme-title">about me</h1>
+					<p class="text-white lg:text-xl font-departure" id="abtme">16 year old developer from Russia.
+						<br> I started programming about 4 years ago
+						<br> with C# and making Unity games, then I branched
+						<br> off into Minecraft mods/plugins and ended up with
+						<br> web development, which I do to this day.
+						<br> My favourite band is Deftones and I play the guitar.
+					</p>
+				</div>
+		
+			</div>
+	
+			<div class="w-screen p-10 flex flex-col gap-5 lg:gap-0 lg:flex-row justify-around items-center">
+				
+				<div class="flex flex-col items-center lg:items-start justify-center lg:justify-normal text-center lg:text-left">
+	
+					<h1 class="block lg:hidden text-6xl text-white font-departure pb-5" id="tools-title">stuff I use</h1>
+	
+					<p class="text-white font-departure text-xl pb-5" id="tools-desc">I use a variety of tools/frameworks to get the <br>
+					job done, here are some of them:</p>
+	
+					<div class="lg:flex grid grid-cols-3 items-center lg:items-left lg:flex-row gap-5">
+						<a href="https://code.visualstudio.com/"><img src="/images/tools/vscode.png" id="tool" alt=""></a>
+						<a href="https://www.jetbrains.com/idea/"><img src="/images/tools/intellij.png" id="tool" alt=""></a>
+						<a href="https://react.dev/"><img src="/images/tools/react.png" id="tool" alt=""></a>
+						<a href="https://astro.build/"><img src="/images/tools/astrojs.png" id="tool" alt=""></a>
+						<a href="https://svelte.dev/"><img src="/images/tools/svelte.png" id="tool" alt=""></a>
+						<a href="https://github.com/mascararivers"><img src="/images/tools/github.png" id="tool" alt=""></a>
+					</div>
+				</div>
+	
+				<h1 class="hidden lg:block text-6xl text-white font-departure" id="tools-title">stuff I use</h1>
+			</div>
 		</div>
 
-		<div class="w-screen p-10 flex flex-col gap-5 lg:gap-0 lg:flex-row justify-around items-center">
-
-			<div class="flex flex-col items-center justify-center">
-				<img src="/images/pfp.png" class="w-32 h-32 lg:w-72 lg:h-72 rounded-full" alt="">
-				<p class="text-white font-departure text-center p-2">"life's greatest combination is jaeger <br> bombs and car keys"</p>
-			</div>
-
-			<div class="flex flex-col items-right text-center lg:text-right">
-				<h1 class="text-white text-6xl font-departure pb-5">about me</h1>
-				<p class="text-white lg:text-xl font-departure">16 year old developer from Russia.
-					<br> I started programming about 4 years ago
-					<br> with C# and making Unity games, then I branched
-					<br> off into Minecraft mods/plugins and ended up with
-					<br> web development, which I do to this day.
-					<br> My favourite band is Deftones and I play the guitar.
-				</p>
-			</div>
-		</div>
+		
 
 	</body>
 
 	<style>
+		#tool {
+			@apply lg:h-16 lg:w-fit w-16 hover:scale-125 duration-300
+		}
+
 		@font-face {
 			font-family: 'departure';
 			src: url('/public/fonts/DepartureMono-Regular.otf');
