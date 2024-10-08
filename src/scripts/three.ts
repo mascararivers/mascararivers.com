@@ -21,6 +21,11 @@ if(typeof window !== 'undefined') { // second canvas settings
         scene.add(mesh) 
     })
 
+    window.addEventListener('resize', () => {
+        camera.updateProjectionMatrix()
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    })
+
     function animate() {
         renderer.render( scene, camera );
         scene.traverse(function(object) {

@@ -11,6 +11,7 @@ if(typeof window !== 'undefined') {
     .set('#abtme', {x: -100, opacity: 0})
     .set('#tools-title', {y: -75, opacity: 0})
     .set('#tools-desc', {x: -100, opacity: 0})
+    .set('#card', {y: -100, opacity: 0})
     
     tl.to('#title', {y: 0, opacity: 1, duration: 1}, 0)
     .to('#mini-title', {y: 0, opacity: 1, duration: 1}, 0)
@@ -20,6 +21,7 @@ if(typeof window !== 'undefined') {
     .to('#abtme', {x: 0, opacity: 1, duration: 1.5}, 0)
     .to('#tools-title', {y: 0, opacity: 1, duration: 2}, 0)
     .to('#tools-desc', {x: 0, opacity: 1, duration: 1}, 0)
+    .to('#card', {y: 0, opacity: 1, duration: 0.5, ease: 'back.out'}, 0)
 
     const tools = document.querySelectorAll("#tool")
     tools.forEach((tool, index) => {

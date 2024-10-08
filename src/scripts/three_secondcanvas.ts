@@ -16,6 +16,12 @@ if(typeof window !== 'undefined') { // this is actually the settings for the fir
 
     camera.position.z = 5;
 
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix()
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    })
+
     function animate() {
         renderer.render( scene, camera );
         camera.position.z -= 0.01
